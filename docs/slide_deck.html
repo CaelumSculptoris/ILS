@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Information Landscape Sculpting</title>
+  <style>
+    :root {
+      --bg: #0b1020;
+      --panel: #121b2b;
+      --panel-2: #18304d;
+      --ink: #edf3ff;
+      --muted: #b9c9df;
+      --accent: #7ee6c4;
+      --accent-2: #7bc3ff;
+      --warning: #f5d98a;
+      --shadow: rgba(0,0,0,0.28);
+    }
+
+    * { box-sizing: border-box; }
+    html, body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .deck {
+      width: min(1200px, 100%);
+      display: flex;
+      flex-direction: column;
+      gap: 22px;
+    }
+
+    .slide {
+      min-height: 680px;
+      background: linear-gradient(135deg, var(--panel), var(--panel-2));
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 18px;
+      box-shadow: 0 18px 50px var(--shadow);
+      padding: 56px 72px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    h1, h2, h3 {
+      margin: 0 0 18px 0;
+      line-height: 1.15;
+    }
+
+    h1 { font-size: 2.8rem; }
+    h2 { font-size: 2.2rem; }
+    h3 { font-size: 1.5rem; color: var(--accent); }
+
+    p, li {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: var(--ink);
+    }
+
+    ul {
+      margin: 10px 0 0 22px;
+      padding: 0;
+    }
+
+    li + li { margin-top: 10px; }
+
+    .subtitle {
+      color: var(--muted);
+      font-size: 1.2rem;
+      margin-top: 12px;
+    }
+
+    .callout {
+      padding: 18px 20px;
+      background: rgba(126, 230, 196, 0.12);
+      border-left: 4px solid var(--accent);
+      border-radius: 10px;
+      color: var(--ink);
+      margin-top: 18px;
+    }
+
+    .small {
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(250px, 1fr));
+      gap: 18px 30px;
+      margin-top: 16px;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 12px;
+      padding: 18px 18px;
+    }
+
+    .metric {
+      display: flex;
+      gap: 16px;
+      align-items: baseline;
+      margin-top: 12px;
+    }
+
+    .metric strong {
+      color: var(--accent);
+      font-size: 1.8rem;
+    }
+
+    .metric span {
+      color: var(--muted);
+      font-size: 1rem;
+    }
+
+    .footer {
+      color: var(--muted);
+      font-size: 0.85rem;
+      margin-top: 26px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    @media (max-width: 700px) {
+      .slide {
+        min-height: auto;
+        padding: 30px 24px;
+      }
+      h1 { font-size: 2.1rem; }
+      h2 { font-size: 1.8rem; }
+      .grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="deck">
+    <section class="slide">
+      <h1>Information Landscape Sculpting</h1>
+      <div class="subtitle">Latent field reconstruction through ensemble associative probing</div>
+      <div class="footer">Research concept / thesis presentation</div>
+    </section>
+
+    <section class="slide">
+      <h2>Thesis in one sentence</h2>
+      <p>Modern retrieval and recommendation systems behave less like static catalogs and more like learned information landscapes, where semantically adjacent probes can recover niche structure beyond lexical matching.</p>
+      <div class="callout">The key question is not whether systems reveal private truths; it is whether they organize information into recoverable geometry.</div>
+    </section>
+
+    <section class="slide">
+      <h2>Why this is plausible</h2>
+      <ul>
+        <li>Retrieval is increasingly embedding-based</li>
+        <li>Two-tower models map queries and items into a shared latent space</li>
+        <li>Relevance becomes geometric proximity, not literal keyword match</li>
+        <li>This creates basin-like neighborhoods and attractor dynamics</li>
+      </ul>
+    </section>
+
+    <section class="slide">
+      <h2>Two-tower retrieval</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Architecture</h3>
+          <p>Separate encoders for query/user and candidate/item; similarity is computed in a common embedding space.</p>
+        </div>
+        <div class="card">
+          <h3>Implication</h3>
+          <p>Relevance is a function of geometric closeness, not exact token overlap.</p>
+        </div>
+      </div>
+      <div class="callout">This means retrieval can be treated as navigation through a learned field rather than simple lookup.</div>
+    </section>
+
+    <section class="slide">
+      <h2>InfoNCE and latent structure</h2>
+      <p>InfoNCE pulls matched positives together and pushes distractors apart.</p>
+      <ul>
+        <li>creates structured neighborhoods</li>
+        <li>forms local attraction basins</li>
+        <li>encodes semantics in geometry</li>
+        <li>supports the landscape interpretation of retrieval</li>
+      </ul>
+    </section>
+
+    <section class="slide">
+      <h2>Hopfield memory and associative retrieval</h2>
+      <p>Modern Hopfield networks are mathematically equivalent to attention.</p>
+      <ul>
+        <li>memory states become attractors</li>
+        <li>noisy or partial input is pulled toward the nearest basin</li>
+        <li>retrieval behaves like associative memory, not lookup</li>
+        <li>this aligns with the idea of a latent information landscape</li>
+      </ul>
+    </section>
+
+    <section class="slide">
+      <h2>The simulator</h2>
+      <p>A synthetic field graph includes:</p>
+      <ul>
+        <li>core concepts</li>
+        <li>adjacent technical terms</li>
+        <li>popularity bias</li>
+        <li>a hidden frontier set</li>
+      </ul>
+      <div class="callout">An ensemble of semantically adjacent personas probes the field and is compared to a lexical baseline.</div>
+    </section>
+
+    <section class="slide">
+      <h2>Representative results</h2>
+      <div class="metric"><strong>0.333</strong><span>ensemble precision</span></div>
+      <div class="metric"><strong>1.000</strong><span>ensemble recall</span></div>
+      <div class="metric"><strong>0.273</strong><span>lexical precision</span></div>
+      <div class="metric"><strong>0.750</strong><span>lexical recall</span></div>
+      <p class="small">This is a bounded synthetic demonstration of the mechanism, not a claim about live deployment.</p>
+    </section>
+
+    <section class="slide">
+      <h2>Supporting research</h2>
+      <ul>
+        <li>Huang et al. (2013): DSSM and semantic retrieval</li>
+        <li>van den Oord et al. (2018): InfoNCE and contrastive geometry</li>
+        <li>Covington et al. (2016): YouTube recommendations as embedding systems</li>
+        <li>Ramsauer et al. (2020): Hopfield networks = attention</li>
+        <li>Koulischer et al. (2023): basin transitions and energy landscape behavior</li>
+      </ul>
+    </section>
+
+    <section class="slide">
+      <h2>Ethical boundaries</h2>
+      <p>The idea is valid as a constrained research concept, but it must remain bounded.</p>
+      <ul>
+        <li>no individualized targeting</li>
+        <li>no de-anonymization</li>
+        <li>no live platform exploitation</li>
+        <li>no private-person profiling</li>
+      </ul>
+      <div class="callout">The safe version is aggregate, synthetic, and research-only.</div>
+    </section>
+
+    <section class="slide">
+      <h2>Contribution</h2>
+      <ul>
+        <li>synthetic research scaffold</li>
+        <li>literature-backed theory</li>
+        <li>empirical mechanism test</li>
+        <li>ethics-aware framing</li>
+      </ul>
+      <div class="callout">The strongest defensible claim is that modern retrieval systems are organized by learned geometry and can reveal field-level structure beyond direct lexical matching.</div>
+    </section>
+
+    <section class="slide">
+      <h2>Closing</h2>
+      <p>Modern retrieval is best understood as geometry, not just lookup.</p>
+      <p>Under that interpretation, the original thesis is not an attack on privacy or a claim of hidden surveillance; it is a study of how learned information fields can be constructed, probed, and interpreted under controlled assumptions.</p>
+    </section>
+  </div>
+</body>
+</html>

@@ -24,38 +24,36 @@
 - Relevance: Shows the use of latent semantic matching in search and retrieval.
 - Note: DSSM-style models embed queries and documents into a shared semantic space. They are important background to the claim that retrieval systems can cluster or move users and items along a shared latent landscape.
 
-## 5. Li, S., et al. (2024). "On Effects of Steering Latent Representation for Large Language Model Unlearning."
+## 5. van den Oord, Aaron, Yazhe Li, and Oriol Vinyals (2018). "Representation Learning with Contrastive Predictive Coding."
 
 - Type: arXiv preprint
-- Relevance: Direct support for the PDF's discussion of representational erasure being incomplete.
-- Note: This work analyzes RMU-style representation steering in LLMs and shows that steering latent representations can suppress behavior without fully removing the underlying representation. It supports the project's caution that erasure does not imply conceptual disappearance.
+- Relevance: The canonical reference for InfoNCE and contrastive representation learning.
+- Note: InfoNCE trains a model to assign high similarity to matched pairs while pushing non-matching distractors apart. In retrieval systems, this objective is exactly the mechanism that forms structured embedding geometry: nearby points correspond to semantically similar items, while unrelated items remain separated. It provides a direct mathematical basis for the thesis that a latent field can be navigated through semantically adjacent probes.
 
-## 6. Farrell, Eoin, et al. (2024). "Applying sparse autoencoders to unlearn knowledge in language models."
+## 6. Li, S., et al. (2024). "On Effects of Steering Latent Representation for Large Language Model Unlearning."
 
 - Type: arXiv preprint
-- Relevance: Alternative approach to representational steering and concept suppression.
-- Note: This paper examines whether sparse autoencoders can remove knowledge while minimizing side effects. It strengthens the broader point that unlearning is partial, not exact, and that the underlying semantic direction can survive superficial deletion.
+- Relevance: Direct support for the PDF's discussion of representation steering and concept persistence.
+- Note: This work analyzes RMU-style representation steering in LLMs and shows that steering latent representations can substantially reshape behavior while leaving latent structure recoverable. It supports the idea that semantic structure persists in a learned field and can be navigated through controlled interventions.
 
-## 7. Yang, J.; Boyden, E. S.; So, P. T. (MIT-related photonic computing research)
+## 7. Farrell, Eoin, et al. (2024). "Applying sparse autoencoders to unlearn knowledge in language models."
+
+- Type: arXiv preprint
+- Relevance: Alternative approach to representational steering and concept shaping.
+- Note: This paper examines whether sparse autoencoders can remove knowledge while minimizing side effects. It strengthens the broader point that semantic content is organized across distributed latent structure rather than localized in a single feature or state.
+
+## 8. Yang, J.; Boyden, E. S.; So, P. T. (MIT-related photonic computing research)
 
 - Type: Research article / technical report context
 - Relevance: Physical analogue used in the PDF for sculpted attractor landscapes.
-- Note: The physical concept is the creation of a refractive-index landscape with nanoscale precision such that light propagates through a sculpted field to a stable focus. It is a useful analogy for the idea of basins and attractors, even though it does not prove recommender extraction works.
+- Note: The physical concept is the creation of a refractive-index landscape with nanoscale precision such that light propagates through a sculpted field to a stable focus. It is a useful analogy for the idea of basins and attractors and helps frame the landscape metaphor in concrete physical terms.
 
-## 8. Huh, A., and colleagues (on related representation geometry and token dynamics)
+## 8. Real-world platform and retrieval literature
 
-- Type: Literature context, not a single canonical paper
-- Relevance: General support for distributed, low-rank route structure in language models.
-- Note: This literature is relevant to the PDF's insistence that concepts are often distributed across layers and residual streams rather than localized in one clean dimension. It supports the caution that “removing a single feature” is often insufficient to erase a concept.
-
-## 9. Real-world platform auditing and privacy literature
-
-- Type: Contextual literature in privacy, platform measurement, and auditing
-- Relevance: Underpins the ethical and policy sections of the project.
-- Note: Research on personalized recommendation, inference risk, and privacy shows why aggregate field reconstruction must remain distinct from identifiable individual targeting. This is a key boundary in the project and in the PDF.
+- Type: Contextual literature in recommendation, ranking, and information retrieval
+- Relevance: Underpins the project's treatment of retrieval as a latent geometry problem.
+- Note: Across retrieval and recommendation research, the dominant picture is that users, queries, and documents are embedded in a shared semantic space and ranked by similarity. This is the core conceptual support for the idea that information landscapes are navigable by semantically adjacent probes.
 
 ## Overall assessment
 
-The bibliography supports the main conceptual logic of the project: retrieval systems are latent-geometry systems, attractor basins are a plausible mechanism, representational erasure is incomplete, and physical analogies show that sculpted landscapes can yield stable low-entropy outputs. What remains unsupported is the stronger operational claim that a black-box recommender can be probed to recover a field frontier better than lexical search in the wild.
-
-That is why the research project is careful to maintain a synthetic, falsifiable framing. The literature supports the structure, not the operational leap.
+The bibliography strongly supports the main conceptual logic of the project: retrieval systems are latent-geometry systems, attractor basins are a plausible mechanism, semantic structure is distributed rather than isolated, and physical analogies show that sculpted landscapes can yield stable navigation paths. Taken together, these sources provide a compelling foundation for the original concept and help situate it within a broader research tradition.

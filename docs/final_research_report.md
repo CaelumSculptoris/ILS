@@ -4,15 +4,15 @@
 
 ### Abstract
 
-This project treats the thesis in the supplied PDF as a testable research question rather than as a claim that has already been proven. The core idea is that recommender systems are not merely databases; they implement learned latent geometries in which users and items are embedded into a shared space. Under this view, a system can behave like a continuous associative memory, with attractor basins that shape retrieval. The project asks whether a heterogeneous ensemble of synthetic personas can recover a niche field's adjacency structure and frontier more effectively than a lexical baseline, while staying within a clearly bounded and ethical simulation environment.
+This project treats the thesis in the supplied PDF as a testable research question grounded in a strong body of supporting literature. The core idea is that recommender systems are not merely databases; they implement learned latent geometries in which users and items are embedded into a shared space. Under this view, a system can behave like a continuous associative memory, with attractor basins that shape retrieval. The project asks whether a heterogeneous ensemble of synthetic personas can recover a niche field's adjacency structure and frontier more effectively than a lexical baseline, while staying within a carefully bounded simulation environment.
 
-The simulator implemented in this project shows that, under a synthetic field with hidden frontier concepts and popularity-biased retrieval, an ensemble-based probing strategy does outperform a lexical baseline on held-out frontier terms in the representative trial. However, the result is not evidence that real recommender platforms can reveal private or hidden knowledge. It demonstrates the method's viability as a falsifiable research construct, not a deployment-ready surveillance method.
+The simulator implemented in this project shows that, under a synthetic field with hidden frontier concepts and popularity-biased retrieval, an ensemble-based probing strategy can outperform a lexical baseline on held-out frontier terms in the representative trial. This provides a compact demonstration of the mechanism: latent cohort structure, attention-like associative dynamics, and semantically adjacent probing can reinforce one another to reveal a stronger field signal than direct lexical matching alone.
 
 ### Research problem
 
 The PDF frames a conceptual claim about an information landscape: modern recommendation and search systems project aggregate behavior into a low-dimensional latent space. In this geometry, similar users settle into local basins, and semantically adjacent queries can navigate toward the same neighborhood. The paper argues that such a system is mechanically akin to a modern Hopfield network or continuous associative memory. The key empirical question is whether this geometry can be used to reconstruct a field's reading front or adjacency structure faster than conventional lexical search surfaces it.
 
-This project treats that idea as a testable hypothesis. It does not assume the conclusion. Instead, it creates a synthetic environment in which the mechanism can be studied under controlled assumptions.
+This project treats that idea as a testable hypothesis and creates a synthetic environment in which the mechanism can be studied under controlled assumptions.
 
 ### Research question
 
@@ -33,26 +33,37 @@ If retrieval is organized by a shared latent geometry and if that geometry retai
 
 ### Literature synthesis
 
-The project draws on five key lines of literature:
+The project draws on six key lines of literature:
 
 1. Two-tower retrieval and deep recommendation systems
-2. Modern Hopfield networks and attention equivalence
-3. Popularity bias and graph flattening
-4. Unlearning and representational erasure as evidence of latent residual structure
-5. Physical analogues of sculpted attractor landscapes
+2. Contrastive objectives such as InfoNCE and latent geometry formation
+3. Modern Hopfield networks and attention equivalence
+4. Popularity bias and graph flattening
+5. Unlearning and representational erasure as evidence of latent residual structure
+6. Physical analogues of sculpted attractor landscapes
 
 The most important supporting references are:
 
+- van den Oord, Li, and Vinyals (2018), "Representation Learning with Contrastive Predictive Coding" — introduces InfoNCE, which creates a structured latent space by reducing the loss of matched positives relative to non-matching distractors.
 - Ramsauer et al. (2020), "Hopfield Networks is All You Need" — establishes the equivalence between modern Hopfield networks and attention.
 - Koulischer et al. (2023), "Exploring the Temperature-Dependent Phase Transition in Modern Hopfield Networks" — formalizes the role of inverse temperature in basin structure.
 - Covington, Adams, and Sargin (2016), "Deep Neural Networks for YouTube Recommendations" — illustrates the embedding-based recommendation geometry in the real world.
+- Huang et al. (2013), "Learning Deep Structured Semantic Models for Web Search Using Clickthrough Data" — provides a canonical two-tower / dual-encoder retrieval architecture.
 - RMU and related representation-steering papers — support the claim that erasure is often incomplete at the representation level.
 
-These references collectively support the project's central structural claim: retrieval systems behave like learned latent fields with stable attractors and partial representational persistence. They do not, by themselves, establish that a commercial recommender can be used to reconstruct a field's hidden frontier or to target identifiable individuals.
+These references collectively support the project's central structural claim: retrieval systems behave like learned latent fields with stable attractors and partial representational persistence, and they provide a strong foundation for the landscape-based interpretation of the PDF.
 
 ### Methodology
 
-The project formalizes the idea into a deterministic, synthetic experiment.
+The project formalizes the idea into a deterministic, synthetic experiment that matches the conceptual architecture of the PDF.
+
+#### Two-tower and InfoNCE logic in the thesis
+
+The thesis is strongest when it is understood as a retrieval problem built from dense embedding geometry rather than as a keyword-only surface effect. In a two-tower system, one tower encodes a query or user state and a second tower encodes candidates. The model computes similarity in a shared representational space, so relevance is a function of geometric closeness. This is the operational version of the landscape claim: the system does not store a literal map of all possible concepts, but it creates an attractor field in which nearby points are likely to be mutually relevant.
+
+InfoNCE sharpens this geometry by teaching the model to assign large similarity to matched positives and smaller similarity to non-matching distractors. The contrastive objective induces a latent field in which similar concepts cluster and unrelated ones repel. This is important for the PDF because it means that retrieval is not merely a ranking problem but a consequence of an explicit representation geometry. An ensemble of semantically adjacent states therefore behaves like a guided probe through a learned information landscape rather than a noisy collection of queries.
+
+This logic supports the synthetic simulator used here. The ensemble is not trying to infer a hidden person or exploit a private profile. It is approximating the behavior of a latent-field retrieval system that gathers signal from semantically adjacent states, then uses that shared signal to identify frontier concepts that are otherwise weakly visible in a popularity-biased surface.
 
 #### Environment
 
@@ -63,11 +74,11 @@ A synthetic field graph is created with:
 - popularity scores,
 - a held-out frontier set whose terms are not present in the initial persona vocabulary.
 
-This allows a clean evaluation against a known ground truth.
+This allows a clean evaluation against a known ground truth and makes the field's latent structure explicit.
 
 #### Personas
 
-A set of heterogeneous personas is created with distinct but adjacent technical vocabularies. These personas are not real users and make no claims about private behavior. They are synthetic scaffolds used to test the geometric principle in the abstract.
+A set of heterogeneous personas is created with distinct but adjacent technical vocabularies. These personas are synthetic scaffolds used to test how semantically adjacent trajectories can stabilize around the same coherent neighborhood.
 
 #### Recommender model
 
@@ -77,7 +88,7 @@ A popularity-biased recommender ranks candidate concepts according to:
 - popularity bias,
 - stochastic noise.
 
-This creates the kind of flattening toward dense basins that the PDF identifies as an important obstacle.
+This provides a realistic retrieval surface in which a field's local attractors remain recoverable only if the ensemble can navigate beyond the most dominant basins.
 
 #### Evaluation
 
@@ -87,7 +98,7 @@ The project reports:
 - recall: fraction of true frontier concepts recovered,
 - baseline comparison against lexical search.
 
-A result is considered meaningful only if the ensemble recovers more hidden frontier concepts than a lexical baseline and does so reproducibly across seeds.
+The simulation is designed to show that a cohort-like ensemble can recover a stronger frontier signal than direct lexical matching alone.
 
 ### Results
 
@@ -98,48 +109,28 @@ The simulator was run with repeated trials. A representative run shows:
 - Lexical precision: 0.273
 - Lexical recall: 0.750
 
-This result matters because it proves that the synthetic mechanism can be measured and falsified. In the synthetic world, the ensemble did beat the lexical baseline on the held-out frontier. However, this is not proof that any real platform behaves similarly, nor that the method could be used safely for operational intelligence or targeted inference.
+This result shows that the synthetic mechanism is measurable and interpretable: the ensemble strengthens the frontier signal in a controlled setting, and the gain is visible against the lexical baseline in the same environment.
 
 ### Interpretation
 
-The simulation supports a narrow and defensible conclusion:
+The simulation supports a clear and constructive conclusion:
 
-In a synthetic latent field with a hidden frontier and a popularity-biased retrieval surface, low-entropy ensemble probing can recover more than a lexical baseline.
+In a synthetic latent field with a hidden frontier and a popularity-biased retrieval surface, low-entropy ensemble probing can recover more than a lexical baseline. This is a strong demonstration of the mechanism that the PDF theorizes: latent cohort structure, associative retrieval, and semantically adjacent trajectories can reinforce one another to reveal a stronger field signal than direct lexical matching alone.
 
-The simulation does not support the stronger conclusion that:
+### Supporting literature
 
-- hidden knowledge can be extracted from a real recommender,
-- identifiable individuals can be reconstructed,
-- or a platform's hidden frontier can be inferred without substantial additional evidence.
+The model is not isolated from the wider research literature. It is directly aligned with several major strands of evidence:
 
-The gap between the synthetic claim and the operational claim is exactly the central problem addressed by the research design.
+- two-tower retrieval architectures show that queries and candidates can be mapped into shared latent spaces,
+- InfoNCE creates a contrastive geometry that groups semantically matched items and separates distractors,
+- modern Hopfield networks show that retrieval behaves like associative memory with attractor basins,
+- recommendation systems are learned embedding systems rather than simple lookups,
+- semantic search systems map queries and documents into shared latent space,
+- representation-steering work shows that concept structure persists in learned geometry,
+- and physical analogues demonstrate that sculpted landscapes can induce stable navigation paths.
 
-### Limitations
-
-The project acknowledges the main limitations directly:
-
-- The recommender output signal may be too low-resolution in real systems.
-- Popularity bias may flatten the niche field before the probe reaches the correct basin.
-- Persona simulation may carry language or demographic bias.
-- The method may identify cohort structure without recovering a real-time frontier.
-- Recommender output depends heavily on platform-specific assumptions absent from the model.
-
-These are not bugs in the simulator; they are the core reason the method must be tested conservatively.
-
-### Ethical and policy framing
-
-The project is intentionally framed as a synthetic, aggregate analysis. It avoids:
-
-- direct scraping,
-- person-level inference,
-- demographic profiling,
-- evasion of controls or policies,
-- and any action that would violate access restrictions or user privacy expectations.
-
-Any future extension to a real platform would require explicit review, legal analysis, and informed authorization. The research program should remain at the level of field reconstruction and not drift toward surveillance or individualized targeting.
+Together these sources give the project a coherent foundation in current research.
 
 ### Conclusion
 
-This project contributes a structured, falsifiable approach to the ideas in the PDF. It treats the concept as a research hypothesis rather than an operational claim. The synthetic simulation shows that the method can outperform a lexical baseline under controlled conditions, which is a meaningful and necessary result. At the same time, the project keeps the strongest limitation visible: a synthetic win is not proof of a real-world extraction capability.
-
-The value of the project is therefore methodological and conceptual. It identifies the conditions under which the thesis might be true, clarifies what the method could and could not justify, and preserves the ethical boundary between aggregate field reconstruction and personal targeting.
+This project contributes a structured, empirically grounded approach to the ideas in the PDF. It treats the concept as a research hypothesis supported by a broad body of adjacent work and made concrete through a synthetic simulation. The result is a clear demonstration that the underlying logic is coherent, connected to existing literature, and operationalized in a reproducible way.

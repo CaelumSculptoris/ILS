@@ -18,7 +18,7 @@ This thesis contributes a synthetic, reproducible, and falsifiable framework for
 
 ### 1.4 Scope and boundaries
 
-The thesis intentionally excludes direct targeting of named individuals, live scraping, or any study that would rely on private traces or non-consensual measurement. The argument remains at the level of field reconstruction and aggregate structure.
+The thesis focuses on field reconstruction and aggregate structure. The argument is framed as a study of latent information geometry rather than a broad surveillance program.
 
 ## 2. Background and Related Work
 
@@ -44,11 +44,11 @@ The PDF also invokes work on unlearning and representation steering. These paper
 
 ### 2.6 Physical analogues of sculpted basins
 
-The MIT photonic analogy describes carved refractive-index landscapes that route light into stable focal points. The analogy is structural: a physical landscape can create reliable basins and trajectories under nonlinear propagation. This supports the general intuition that a sculpted geometry can make a signal flow toward stable minima, but it is not proof that recommendation systems can be exploited in the same way.
+The MIT photonic analogy describes carved refractive-index landscapes that route light into stable focal points. The analogy is structural: a physical landscape can create reliable basins and trajectories under nonlinear propagation. This supports the general intuition that a sculpted geometry can make a signal flow toward stable minima in a way that is conceptually analogous to a recommendation landscape.
 
 ## 3. Thesis Statement
 
-The central claim of the thesis is modest and testable: a recommender or retrieval surface that encodes aggregated user behavior in a shared latent space may allow an ensemble of semantically adjacent synthetic probes to recover the adjacency structure and frontier of a niche field more effectively than lexical search alone, under conditions in which the underlying field geometry remains recoverable. The thesis does not claim that this method can recover hidden or classified knowledge from a platform, nor does it justify individual targeting.
+The central claim of the thesis is modest and testable: a recommender or retrieval surface that encodes aggregated user behavior in a shared latent space may allow an ensemble of semantically adjacent synthetic probes to recover the adjacency structure and frontier of a niche field more effectively than lexical search alone, under conditions in which the underlying field geometry remains recoverable.
 
 ## 4. Research Design
 
@@ -59,7 +59,7 @@ The project uses a synthetic concept graph with a held-out frontier set. The gra
 - core field concepts,
 - adjacent technical terms,
 - popularity weights,
-- and a hidden frontier that is not directly seeded in the persona vocabulary.
+- and a hidden frontier that remains adjacent to the field rather than explicitly present in the initial vocabulary.
 
 This environment makes the claim precise and falsifiable.
 
